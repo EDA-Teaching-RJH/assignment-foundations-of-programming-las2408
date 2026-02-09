@@ -48,12 +48,15 @@ def run_system_monolith():
         elif opt == "3":
             rem = input("Name to remove: ")
 
-            if rem in n:
+            if rem in n: # checks if name entered is in the list
                 idx = n.index(rem)
                 n.pop(idx)
                 r.pop(idx)
                 d.pop(idx)
                 print("Removed.")
+
+            else:
+                print("Error: Name not found in database") # gets the system out so theres no crash
             
         elif opt == "4":
             print("Analyzing...")
