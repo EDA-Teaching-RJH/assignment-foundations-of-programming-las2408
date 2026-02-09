@@ -43,6 +43,7 @@ def main():
         if opt == "9":
             print("Exiting Menu - System Shutdown")
 
+    # part 3
     def add_member(n,r,d,i): # collecting data ensuring it passes required parameters and in correc format
         new_name = str(input("Name: ")).title()
         new_rank = str(input("Rank: ")).title()
@@ -62,6 +63,7 @@ def main():
 
         print(f"Success, {new_name} has been added to the roster.")
         
+    # part 4
     def remove_member(n,d,r,i):
         removee = str(input("Enter ID to remove: ")).upper() # ensures the id is entered correctly
         if removee in i:
@@ -79,6 +81,7 @@ def main():
         else:
             print(f"Error: ID: {removee} not found - no changes are made.")
 
+    # part 5
     def update_rank(n,r,d,i):
         update = str(input("Please Enter ID: ")).upper() # finds id and name of crew member
         if update in i:
@@ -86,12 +89,18 @@ def main():
             current_rank = r[ranks]
             crew_name = n[ranks]
 
-            print(f"Current Rank for {crew_name} : {current_rank}")
+            print(f"Current Rank for {crew_name} : {current_rank}") # prints current information
 
             new_rank = str(input("Please Enter New Rank")).title()
             r[ranks] = new_rank
-            print(f"Sucess: {crew_name} has been promoted/demoted to {new_rank}")
+            print(f"Sucess: {crew_name} has been promoted/demoted to {new_rank}") # prints change
         else:
             print(f"ID: {update} cannot be found.")
+
+    # part 6
+    def display_roster(n,r,d,i):
+        print("--- CREW ---")
+        for a in range(len(n)): # pulls the no of items in list
+            print(f" Name: {n[a]}, Rank: {r[a]}, Division: {d[a]}, ID: {i[a]} ") #prints in an orderly form
 
 main()

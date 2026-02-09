@@ -177,7 +177,7 @@ Full Implementation = **4 Marks**
         
     -   Removes the entry from _all 4 lists_ to keep them in sync.
         
-5.  `update_rank(names, ranks, ids)`:
+5.  `update_rank(names, ranks, ids)`:display_roster
     
     -   Finds a member by ID.
         
