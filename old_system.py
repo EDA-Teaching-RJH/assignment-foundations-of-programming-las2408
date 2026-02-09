@@ -5,6 +5,8 @@ d = ["Command", "Command", "Operations", "Security"]
 active = True
 
 def run_system_monolith():
+    global active # global variable if we need to modify active
+
     print("BOOTING SYSTEM...")
     print("...")
     print("WELCOME TO FLEET COMMAND")
@@ -16,7 +18,7 @@ def run_system_monolith():
         loading = loading + 1 # takes us out of the loop and opens the menu
         
     
-    while True:
+    while active: # uses the active variable which now controls the entire loop
         print("\n--- MENU ---")
         print("1. View Crew")
         print("2. Add Crew")
@@ -45,12 +47,13 @@ def run_system_monolith():
             
         elif opt == "3":
             rem = input("Name to remove: ")
-           
-            idx = n.index(rem)
-            n.pop(idx)
-            r.pop(idx)
-            d.pop(idx)
-            print("Removed.")
+
+            if rem in n:
+                idx = n.index(rem)
+                n.pop(idx)
+                r.pop(idx)
+                d.pop(idx)
+                print("Removed.")
             
         elif opt == "4":
             print("Analyzing...")
@@ -63,7 +66,7 @@ def run_system_monolith():
             
         elif opt == "5":
             print("Shutting down.")
-            break
+            active = False # breaks the while active loop but not the whole loop
             
         else:
             print("Invalid.")
@@ -90,6 +93,5 @@ def run_system_monolith():
             break 
             
         print("End of cycle.")
-        break # ends the loop and ends the cycle
 
 run_system_monolith() # calls the function
