@@ -25,7 +25,7 @@ def main():
         print("9. Exit")
 
         if opt == "1": # calling individual functions when neccessary is cleaner than writing out new code everytime
-            add_member(n,r,d,i)
+            add_member()
         if opt == "2":
             remove_member()
         if opt == "3":
@@ -43,14 +43,14 @@ def main():
         if opt == "9":
             print("Exiting Menu - System Shutdown")
 
-    def add_member(): # collecting data ensuring it passes required parameters
-        new_name = str(input("Name: "))
-        new_rank = str(input("Rank: "))
+    def add_member(n,r,d,i): # collecting data ensuring it passes required parameters and in correc format
+        new_name = str(input("Name: ")).title()
+        new_rank = str(input("Rank: ")).title()
         if new_rank in r:
             print("Invalid Rank Entered.")
             return
-        new_div = str(input("Division: "))
-        new_id = str(input("ID: "))
+        new_div = str(input("Division: ")).title()
+        new_id = str(input("ID: ")).upper()
         if new_id in i:
             print("Invalid ID Entered.")
             return
@@ -62,7 +62,22 @@ def main():
 
         print(f"Success, {new_name} has been added to the roster.")
         
-                
+    def remove_member(n,d,r,i):
+        removee = str(input("Enter ID to remove: ")).upper() # ensures the id is entered correctly
+        if removee in i:
+            idX = i.index(removee) # finding the index
+            removed_name = n[idX]
+
+            # removing all other data
+            n.pop(idX)
+            r.pop(idX)
+            d.pop(idX)
+            i.pop(idX)
+
+            print(f"Successfully removed {removed_name}, ID: {removee} from the roster.")
+
+        else:
+            print(f"Error: ID: {removee} not found - no changes are made.")
 
 
 main()
