@@ -4,7 +4,7 @@ def main():
     # part 1
     def init_database():
         n = ["Picard", "Riker", "Data", "La Forge", "Worf"] # the lists with the characters data
-        r = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Lieutenant"]
+        r = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Ensign"]
         d = ["Command", "Command", "Operations", "Operations", "Operations", "Sciences"]
         i = ["PI1", "RI1", "DA1", "LF1", "WO1"]
         return n, r, d, i
@@ -119,20 +119,41 @@ def main():
     def filter_by_division(n,r,d,i):
         div_search = str(input("Enter Division (Command, Operations, Sciences): ")).title()
 
-        found = False
+        found = False # to flag if we find any
         
         for t in range(len(d)):
-            if d[t] == div_search:
+            if d[t] == div_search: # checking if we found the member
                 print(f"Member Found - Name: {n[t]:<15}, Rank: {r[t]:<15}, Division: {d[t]:<15}, ID: {i[t]:<10}")
                 found = True
 
         if not found:
-            print(f"No memeber found in {div_search} division.")
+            print(f"No memeber found in {div_search} division.") # fail safe
+
+    # part 9
+    def calculate_payroll(n,d,r,i):
+        total_cost = 0
+        for c in range(len(n)):
+            ranked = r[c]
+
+            if ranked == "Captain": # assigns salaries based off rank
+                salary = 1000 
+            elif ranked == "Commander":
+                salary = 800
+            elif ranked == "Lt. Commander":
+                salary = 600
+            elif ranked == "Lieutenant":
+                salary = 400  
+            elif ranked == "Ensign":
+                salary = 200        
+            else:
+                print(f"Invalid Rank.")
+
+            print(f"Name: {n[c]:<15}, Rank: {r[c]:<15}, Salary: {salary}") # print salaries
+            total_cost += salary # total up the cost
+
+        print(f"Total Cost Spent On Crew: {total_cost}")
 
 
-        
-
-
-
+    
 
 main()
