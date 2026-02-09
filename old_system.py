@@ -39,6 +39,7 @@ def run_system_monolith():
            
             n.append(new_name)
             r.append(new_rank) # added crew memeber rank
+            d.append(new_div) # added crew memeber division
             print("Crew member added.")
             
         elif opt == "3":
