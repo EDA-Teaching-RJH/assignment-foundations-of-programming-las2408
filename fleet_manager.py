@@ -5,7 +5,7 @@ def main():
     def init_database():
         n = ["Picard", "Riker", "Data", "La Forge", "Worf"] # the lists with the characters data
         r = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Lieutenant"]
-        d = ["Command", "Command", "Operations", "Operations", "Operations", "Security"]
+        d = ["Command", "Command", "Operations", "Operations", "Operations", "Sciences"]
         i = ["PI1", "RI1", "DA1", "LF1", "WO1"]
         return n, r, d, i
 
@@ -101,6 +101,27 @@ def main():
     def display_roster(n,r,d,i):
         print("--- CREW ---")
         for a in range(len(n)): # pulls the no of items in list
-            print(f" Name: {n[a]}, Rank: {r[a]}, Division: {d[a]}, ID: {i[a]} ") #prints in an orderly form
+            print(f" Name: {n[a]:<15}, Rank: {r[a]:<15}, Division: {d[a]:<15}, ID: {i[a]:<10} ") #prints in an orderly form
+
+    # part 7
+    def search_crew(n,r,d,i):
+        searched = str(input("Please Enter Term: "))
+        found = False # flagged if we find anyone
+        for s in range(len(n)):
+            if searched in n[s]:
+                print(f"Match Found: {n[s]}, Rank: {r[s]}, Division: {d[s]}, ID: {i[s]}")
+                found = True # person found, flag is raised
+
+        if not found: # if no members are found
+            print(f"No Members found with {searched}")
+
+    # part 8
+    def filter_by_division():
+
+
+        
+
+
+
 
 main()
