@@ -1,0 +1,1 @@
++ " - " + d[i]) # displays the divisions of each memeber
