@@ -116,7 +116,18 @@ def main():
             print(f"No Members found with {searched}")
 
     # part 8
-    def filter_by_division():
+    def filter_by_division(n,r,d,i):
+        div_search = str(input("Enter Division (Command, Operations, Sciences): ")).title()
+
+        found = False
+        
+        for t in range(len(d)):
+            if d[t] == div_search:
+                print(f"Member Found - Name: {n[t]:<15}, Rank: {r[t]:<15}, Division: {d[t]:<15}, ID: {i[t]:<10}")
+                found = True
+
+        if not found:
+            print(f"No memeber found in {div_search} division.")
 
 
         
