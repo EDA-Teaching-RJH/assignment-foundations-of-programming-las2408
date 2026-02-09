@@ -79,5 +79,19 @@ def main():
         else:
             print(f"Error: ID: {removee} not found - no changes are made.")
 
+    def update_rank(n,r,d,i):
+        update = str(input("Please Enter ID: ")).upper() # finds id and name of crew member
+        if update in i:
+            ranks = i.index(update)
+            current_rank = r[ranks]
+            crew_name = n[ranks]
+
+            print(f"Current Rank for {crew_name} : {current_rank}")
+
+            new_rank = str(input("Please Enter New Rank")).title()
+            r[ranks] = new_rank
+            print(f"Sucess: {crew_name} has been promoted/demoted to {new_rank}")
+        else:
+            print(f"ID: {update} cannot be found.")
 
 main()
