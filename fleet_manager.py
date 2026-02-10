@@ -152,8 +152,35 @@ def main():
             total_cost += salary # total up the cost
 
         print(f"Total Cost Spent On Crew: {total_cost}")
-
-
     
+    # part 10
+    def count_officers(n,r,d,i):
+        # counters for the ranks
+        captains = 0
+        commanders = 0
+        lt_commanders = 0
+        lieutenants = 0
+        ensigns = 0
+
+        for ra in r: # values for each rank
+            if ra == "Captain":
+                captains += 1
+            elif ra == "Commander":
+                commanders += 1
+            elif ra == "Lt. Commander":
+                lt_commanders += 1
+            elif ra == "Lieutenants":
+                lieutenants += 1
+            elif ra == "Ensigns":
+                ensigns += 1
+            else:
+                print(f"Invalid Rank - Personel Is Not Onboard.")
+
+        # final personel count onboard
+        print(f"Captains:    {captains}")
+        print(f"Commanders:  {commanders}")
+        print(f"Lieutenants: {lieutenants}")
+        print(f"Ensigns: {ensigns}")
+        print(f"Total Crew:  {len(r)}")
 
 main()

@@ -213,7 +213,7 @@ Full Implementation = **4 Marks**
     
 	   -   Counts how many "Captain" and "Commander" ranks exist and returns the integer.
 
-```
+```count
 🔴🔴🔴 YOU MUST COMMIT EVERYTIME YOU ADD A FEATURE  🔴🔴🔴
 ```
 
