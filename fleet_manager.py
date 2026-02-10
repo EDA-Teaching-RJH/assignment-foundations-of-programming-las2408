@@ -123,7 +123,7 @@ def count_officers(r):
         elif ra == "Lieutenant": lieutenants += 1
         elif ra == "Ensign": ensigns += 1
     # final personel count onboard
-    print(f"Captains: {captains} | Commanders: {commanders} | Lieutenants: {lieutenants} | Ensigns: {ensigns}")
+    print(f"Captains: {captains} | Commanders: {commanders} | Lt. Commanders: {lt_commanders} | Lieutenants: {lieutenants} | Ensigns: {ensigns}")
     print(f"Total Crew: {len(r)}")
 
 # part 2
